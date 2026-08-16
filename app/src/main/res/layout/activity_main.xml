@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -9,110 +10,108 @@
     android:padding="24dp">
 
     <TextView
+        android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Placar de Truco"
-        android:textSize="28sp" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="30dp" />
-
-    <!-- Equipe A -->
+        android:textSize="28sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
+        android:id="@+id/equipeA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Equipe A"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/titulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp" />
 
     <TextView
         android:id="@+id/textPontosA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
-        android:textSize="48sp" />
+        android:textSize="48sp"
+        app:layout_constraintTop_toBottomOf="@id/equipeA"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <LinearLayout
+    <Button
+        android:id="@+id/buttonMais1A"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:text="+1"
+        app:layout_constraintTop_toBottomOf="@id/textPontosA"
+        app:layout_constraintEnd_toStartOf="@id/buttonMais3A" />
 
-        <Button
-            android:id="@+id/buttonMais1A"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+1" />
-
-        <Button
-            android:id="@+id/buttonMais3A"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+3" />
-
-    </LinearLayout>
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="30dp" />
-
-    <!-- Equipe B -->
+    <Button
+        android:id="@+id/buttonMais3A"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+3"
+        app:layout_constraintTop_toBottomOf="@id/textPontosA"
+        app:layout_constraintStart_toEndOf="@id/buttonMais1A" />
 
     <TextView
+        android:id="@+id/equipeB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Equipe B"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/buttonMais1A"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp" />
 
     <TextView
         android:id="@+id/textPontosB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
-        android:textSize="48sp" />
+        android:textSize="48sp"
+        app:layout_constraintTop_toBottomOf="@id/equipeB"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <LinearLayout
+    <Button
+        android:id="@+id/buttonMais1B"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:text="+1"
+        app:layout_constraintTop_toBottomOf="@id/textPontosB"
+        app:layout_constraintEnd_toStartOf="@id/buttonMais3B" />
 
-        <Button
-            android:id="@+id/buttonMais1B"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+1" />
-
-        <Button
-            android:id="@+id/buttonMais3B"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+3" />
-
-    </LinearLayout>
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="30dp" />
-
-    <!-- Mensagem -->
+    <Button
+        android:id="@+id/buttonMais3B"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+3"
+        app:layout_constraintTop_toBottomOf="@id/textPontosB"
+        app:layout_constraintStart_toEndOf="@id/buttonMais1B" />
 
     <TextView
         android:id="@+id/textMensagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
-        android:textSize="20sp" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp" />
-
-    <!-- Reiniciar -->
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/buttonMais1B"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp" />
 
     <Button
         android:id="@+id/buttonReiniciar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Reiniciar" />
+        android:text="Reiniciar"
+        app:layout_constraintTop_toBottomOf="@id/textMensagem"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
