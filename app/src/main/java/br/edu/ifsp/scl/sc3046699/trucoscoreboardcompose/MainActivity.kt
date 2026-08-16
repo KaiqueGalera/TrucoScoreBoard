@@ -25,4 +25,36 @@ class MainActivity : AppCompatActivity() {
     private fun jogoFinalizado(): Boolean {
         return pontosA >= 12 || pontosB >= 12
     }
+
+    private fun atualizarTela() {
+
+        textPontosA.text = pontosA.toString()
+        textPontosB.text = pontosB.toString()
+
+        textMensagem.text = when {
+            pontosA >= 12 -> "Equipe A venceu!"
+            pontosB >= 12 -> "Equipe B venceu!"
+            pontosA == 11 -> "Equipe A entrou na mão de 11!"
+            pontosB == 11 -> "Equipe B entrou na mão de 11!"
+            else -> ""
+        }
+
+        if (jogoFinalizado()) {
+            desabilitarBotoes()
+        }
+    }
+
+    private fun desabilitarBotoes() {
+        buttonMais1A.isEnabled = false
+        buttonMais3A.isEnabled = false
+        buttonMais1B.isEnabled = false
+        buttonMais3B.isEnabled = false
+    }
+
+    private fun habilitarBotoes() {
+        buttonMais1A.isEnabled = true
+        buttonMais3A.isEnabled = true
+        buttonMais1B.isEnabled = true
+        buttonMais3B.isEnabled = true
+    }
 }
