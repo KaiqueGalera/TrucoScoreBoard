@@ -26,6 +26,23 @@ class MainActivity : AppCompatActivity() {
         return pontosA >= 12 || pontosB >= 12
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        setContentView(R.layout.activity_main)
+
+        textPontosA = findViewById(R.id.textPontosA)
+        textPontosB = findViewById(R.id.textPontosB)
+        textMensagem = findViewById(R.id.textMensagem)
+
+        buttonMais1A = findViewById(R.id.buttonMais1A)
+        buttonMais3A = findViewById(R.id.buttonMais3A)
+        buttonMais1B = findViewById(R.id.buttonMais1B)
+        buttonMais3B = findViewById(R.id.buttonMais3B)
+
+        buttonReiniciar = findViewById(R.id.buttonReiniciar)
+
+    }
     private fun atualizarTela() {
 
         textPontosA.text = pontosA.toString()
