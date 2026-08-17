@@ -42,6 +42,8 @@ class MainActivity : AppCompatActivity() {
 
         buttonReiniciar = findViewById(R.id.buttonReiniciar)
 
+        configurarBotoes()
+
     }
     private fun atualizarTela() {
 
@@ -73,5 +75,44 @@ class MainActivity : AppCompatActivity() {
         buttonMais3A.isEnabled = true
         buttonMais1B.isEnabled = true
         buttonMais3B.isEnabled = true
+    }
+
+    private fun configurarBotoes() {
+
+        buttonMais1A.setOnClickListener {
+            if (!jogoFinalizado()) {
+                pontosA = minOf(pontosA + 1, 12)
+                atualizarTela()
+            }
+        }
+
+        buttonMais3A.setOnClickListener {
+            if (!jogoFinalizado()) {
+                pontosA = minOf(pontosA + 3, 12)
+                atualizarTela()
+            }
+        }
+
+        buttonMais1B.setOnClickListener {
+            if (!jogoFinalizado()) {
+                pontosB = minOf(pontosB + 1, 12)
+                atualizarTela()
+            }
+        }
+
+        buttonMais3B.setOnClickListener {
+            if (!jogoFinalizado()) {
+                pontosB = minOf(pontosB + 3, 12)
+                atualizarTela()
+            }
+        }
+
+        buttonReiniciar.setOnClickListener {
+            pontosA = 0
+            pontosB = 0
+
+            habilitarBotoes()
+            atualizarTela()
+        }
     }
 }
